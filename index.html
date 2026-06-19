@@ -1,233 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solution By Idea</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution By Idea</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body{
-background:#f5f7fa;
-color:#222;
-}
+        body {
+            background-color: #f8fafc; /* ලස්සන soft off-white background එකක් */
+            color: #334155;
+        }
 
-header{
-background:#0D47A1;
-color:white;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+        /* 1. ලස්සන Navbar එකක් */
+        header {
+            background-color: #0f172a; /* Dark Blue / Black Navy */
+            padding: 20px 0;
+        }
 
-.logo{
-font-size:28px;
-font-weight:bold;
-}
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+        }
 
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:80px 8%;
-min-height:80vh;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
 
-.hero-text{
-max-width:600px;
-}
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-.hero h1{
-font-size:50px;
-margin-bottom:20px;
-color:#0D47A1;
-}
+        .nav-links a:hover {
+            color: white;
+        }
 
-.hero p{
-font-size:18px;
-line-height:1.8;
-margin-bottom:30px;
-}
+        /* 2. Modern Hero Section */
+        .hero-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
 
-.btn{
-display:inline-block;
-padding:14px 28px;
-background:#E53935;
-color:white;
-text-decoration:none;
-border-radius:8px;
-margin-right:10px;
-}
+        .hero-text {
+            flex: 1.2;
+        }
 
-.btn:hover{
-opacity:0.9;
-}
+        .hero-text h1 {
+            color: #0f172a;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
-.hero-image{
-font-size:180px;
-}
+        .hero-text p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
 
-section{
-padding:80px 8%;
-}
+        /* 3. Modern Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
 
-.title{
-text-align:center;
-font-size:36px;
-margin-bottom:50px;
-color:#0D47A1;
-}
+        .btn-primary {
+            background-color: #2563eb; /* Modern Blue */
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            transition: all 0.3s;
+        }
 
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px); /* උඩට පොඩ්ඩක් lift වෙනවා */
+        }
 
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 0 15px rgba(0,0,0,0.08);
-}
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: #1e293b;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
 
-.card h3{
-margin-bottom:15px;
-color:#E53935;
-}
+        .btn-secondary:hover {
+            background-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
 
-.about{
-text-align:center;
-line-height:1.8;
-max-width:900px;
-margin:auto;
-}
+        /* 4. Right side illustration wrapper */
+        .hero-image {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
 
-.contact{
-text-align:center;
-}
+        .hero-image svg {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
 
-.contact p{
-font-size:20px;
-margin:10px 0;
-}
-
-footer{
-background:#121212;
-color:white;
-text-align:center;
-padding:30px;
-}
-</style>
+        /* Responsive - Phone වලටත් ලස්සන වෙන්න */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 20px;
+            }
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">Solution By Idea</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-</nav>
-</header>
-
-<section class="hero">
-
-<div class="hero-text">
-<h1>Smart Technology Solutions For Modern Businesses</h1>
-
-<p>
-We help businesses and individuals grow through innovative technology,
-web development, management strategies, sales optimization,
-and digital marketing solutions.
-</p>
-
-<a href="#services" class="btn">Our Services</a>
-<a href="#contact" class="btn">Contact Us</a>
-</div>
-
-<div class="hero-image">
-💡
-</div>
-
-</section>
-
-<section>
-<h2 class="title">About Us</h2>
-
-<div class="about">
-<p>
-Solution By Idea is a technology and business solutions platform
-dedicated to helping entrepreneurs, startups, and companies overcome
-challenges through smart ideas and modern digital solutions.
-</p>
-</div>
-</section>
-
-<section id="services">
-<h2 class="title">Our Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Web Development</h3>
-<p>Professional websites and custom web solutions.</p>
-</div>
-
-<div class="card">
-<h3>Business Management</h3>
-<p>Improve operations and business performance.</p>
-</div>
-
-<div class="card">
-<h3>Sales Growth</h3>
-<p>Strategies to increase customers and revenue.</p>
-</div>
-
-<div class="card">
-<h3>Digital Marketing</h3>
-<p>SEO, social media marketing and branding.</p>
-</div>
-
-<div class="card">
-<h3>Technology Solutions</h3>
-<p>Modern digital solutions for real-world problems.</p>
-</div>
-
-</div>
-</section>
-
-<section id="contact">
-<h2 class="title">Contact Us</h2>
-
-<div class="contact">
-<p>📞 072 595 3021</p>
-<p>📧 lochanamadushan074@gmail.com</p>
-</div>
-</section>
-
-<footer>
-<h3>Solution By Idea</h3>
-<p>Turning Problems Into Smart Solutions</p>
-<br>
-<p>© 2026 Solution By Idea. All Rights Reserved.</p>
-</footer>
-
-</body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Solution By Idea</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="hero-section">
+        <div class="hero-text">
+            <h1>Smart Technology Solutions For Modern Businesses</h1>
+            <p>We help businesses and individuals grow through innovative technology, web development, management strategies, sales optimization, and digital marketing solutions.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Our Services</a>
+                <a href="#" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 21H15M10 18H14M12 2C7.58172 2 4 5.58172 4 10C4 12.3969 5.04835 14.5491 6.70273 16H17.2973C18.9517 14.5491 20 12.3969 20 10C20 5.58172 16.4183 2 12 2Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 6V10M10 8H14" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </main>
+    </body>
 </html>
